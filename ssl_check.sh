@@ -12,12 +12,12 @@ MAIL="/usr/sbin/ssmtp" #you should have been configured ssmtp
 STATUS_FILE="./STATUS_SSL.txt"
 DOMAINS="./DOMAINS.txt"
 
-[ -s $STATUS_FILE ] && echo -e "" $STATUS_FILE;
+[ -s $STATUS_FILE ] && echo -e "" > $STATUS_FILE;
 
 send_report(){
 	if [[ -s $STATUS_FILE ]]
 	then
-		echo -e "Subject: SSL ended soon!\n\n$(cat $STATUS_SSL)" | $MAIL name@your.domain
+		echo -e "Subject: SSL ended soon!\n\n$(cat $STATUS_FILE)" | $MAIL name@your.domain
 	fi
 }
 
