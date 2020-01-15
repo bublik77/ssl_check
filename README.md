@@ -1,2 +1,2 @@
 # ssl_check
-bash script for check end ssl certificate 
+bash script for checking the end of ssl certificate 
